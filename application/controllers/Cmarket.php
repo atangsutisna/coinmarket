@@ -9,7 +9,7 @@ class Cmarket extends CI_Controller {
         $this->load->model('cmarket_model');
     }
     
-    public function index($limit)
+    public function index($limit, $currency = 'USD')
 	{
 	    $limit = isset($limit) ? $limit : null;
 	    $currency = isset($currency) ? $currency : 'USD';

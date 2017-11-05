@@ -52,4 +52,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-$route['cmarket/(:num)'] = "cmarket/index/$1";
+$route['cmarket/limit/(:num)'] = "cmarket/index/$1";
+$route['cmarket/limit/(:num)/currency/(:any)'] = "cmarket/index/$1/$2";
