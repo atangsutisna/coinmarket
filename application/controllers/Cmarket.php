@@ -31,7 +31,8 @@ class Cmarket extends CI_Controller {
 		$this->load->view('main_template', $params);
 	}
 	
-	public function view() {
+	public function view() 
+	{
 	    $limit = $this->input->post('limit') != 'all' ? $this->input->post('limit') : NULL;
 	    $currency = $this->input->post('currency');
 		$params = array(
@@ -43,6 +44,14 @@ class Cmarket extends CI_Controller {
 		 );
 		
 		$this->load->view('main_template', $params);
+	}
+	
+	public function show_view() 
+	{
+	    $params = array(
+	        'content_view' => 'cmarket/show_view'
+	    );
+	    $this->load->view('main_template', $params);
 	}
 	
 }
