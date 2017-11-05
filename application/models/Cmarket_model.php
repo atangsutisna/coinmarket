@@ -13,7 +13,7 @@ class Cmarket_model extends CI_Model {
     public function find_all($currency = 'USD', $limit) {
         $uri = $this->base_uri. '?convert='. $currency;
         
-        if (isset($limit)) {
+        if ($limit != null) {
             $uri .= '&limit='. $limit;
         }
         
