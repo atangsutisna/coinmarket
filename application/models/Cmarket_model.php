@@ -10,7 +10,8 @@ class Cmarket_model extends CI_Model {
             parent::__construct();
     }
     
-    public function find_all($currency = 'USD', $limit) {
+    public function find_all($currency = 'USD', $limit) 
+    {
         $uri = $this->base_uri. '?convert='. $currency;
         
         if ($limit != null || $limit != NULL) {
@@ -19,6 +20,18 @@ class Cmarket_model extends CI_Model {
         
         $content = file_get_contents($uri);
 		return json_decode($content, true);
+    }
+    
+    public function find_one($id, $currency) 
+    {
+        $currencies = $this->find_all($currency, 'all');
+        foreach ($currencies as $currency) {
+            if ($currency['id'] == $id) {
+                return $currency;
+            }
+        }
+        
+        return null;
     }
 
 }

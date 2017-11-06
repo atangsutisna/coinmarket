@@ -1,4 +1,4 @@
-<?php echo form_open('cmarket/view') ?>
+<?php echo form_open('cmarket/show') ?>
     <label class="custom-control custom-radio">
       <input name="limit" type="radio" class="custom-control-input" value="100" <?php echo $limit === '100' ? "checked=\"checked\"" : "" ?>>
       <span class="custom-control-indicator"></span>
@@ -41,7 +41,7 @@
                 }
             ?>
             <td><?php echo $content['rank'] ?></td>
-            <td><?php echo $content['name'] ?></td>
+            <td><?php echo anchor('cmarket/view/'. $content['id'], $content['name']) ?></td>
             <td><?php echo $currency_symbol. number_format($market_cap) ?></td>
             <td><?php echo $currency_symbol. number_format($price) ?></td>
             <td><?php echo $currency_symbol. number_format($volume24) ?></td>

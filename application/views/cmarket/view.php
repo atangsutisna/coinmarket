@@ -1,3 +1,4 @@
+<h3><?php echo $cmarket_content['name'] ?> (<?php echo $cmarket_content['symbol'] ?>)</h3>
 <h3>$7542.18 (2.37%)</h3>
 <h5>1.00 BTC (0.00%)</h5>
 <table class="table">
